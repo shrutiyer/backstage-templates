@@ -8,29 +8,6 @@ spec:
   owner: petmart-team
 ---
 apiVersion: backstage.io/v1alpha1
-kind: Resource
-metadata:
-  name: petmart-gateway
-  description: My petmart gateway
-spec:
-  type: service
-  owner: petmart-team
-  system: petmart
-  providesApis: [petmart-api]
-# ---
-# apiVersion: backstage.io/v1alpha1
-# kind: Component
-# metadata:
-#   name: petmart-gateway
-#   description: My petmart gateway
-# spec:
-#   type: service
-#   owner: petmart-team
-#   system: petmart
-#   lifecycle: production
-#   providesApis: [petmart-api]
----
-apiVersion: backstage.io/v1alpha1
 kind: Group
 metadata:
   name: petmart-team
@@ -39,6 +16,30 @@ spec:
   type: business-unit
   children: [other]
   members: [jdoe]
+---
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: petmart-gateway
+  description: My petmart gateway
+spec:
+  type: service
+  owner: petmart-team
+  system: petmart
+  dependencyOf: [petmart-curated]
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: petmart-curated
+  description: My petmart API
+spec:
+  type: service
+  owner: petmart-team
+  system: petmart
+  lifecycle: production
+  providesApis: [petmart-api]
+  dependsOn: [cat-api, dog-api]
 ---
 apiVersion: backstage.io/v1alpha1
 kind: API
