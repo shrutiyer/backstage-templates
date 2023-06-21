@@ -16,8 +16,7 @@ spec:
   type: service
   owner: petmart-team
   system: petmart
-  providesApis: 
-    - petmart-api
+  providesApis: [petmart-api]
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component
@@ -29,8 +28,17 @@ spec:
   owner: petmart-team
   system: petmart
   lifecycle: production
-  providesApis: 
-    - petmart-api
+  providesApis: [petmart-api]
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: petmart-team
+  description: The infra business unit
+spec:
+  type: business-unit
+  children: [other]
+  members: [jdoe]
 ---
 apiVersion: backstage.io/v1alpha1
 kind: API
@@ -102,7 +110,7 @@ metadata:
 spec:
   type: openapi
   isCuratedApi: false
-  providesApi: petmart-api
+  providesApis: [petmart-api]
   lifecycle: production
   owner: petmart-team
   system: petmart
@@ -165,7 +173,7 @@ metadata:
 spec:
   type: openapi
   isCuratedApi: false
-  providesApi: petmart-api
+  providesApis: [petmart-api]
   lifecycle: production
   owner: petmart-team
   system: petmart
