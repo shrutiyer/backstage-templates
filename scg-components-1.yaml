@@ -14,7 +14,6 @@ metadata:
   description: My petmart gateway
 spec:
   type: service
-  lifecycle: experimental
   owner: petmart-team
   system: petmart
   providesApis: 
