@@ -48,7 +48,7 @@ metadata:
 spec:
   type: openapi
   isCuratedApi: true
-  dependsOn: [petmart-gateway]
+  dependsOn: [petmart-gateway, cat-api, dog-api]
   lifecycle: production
   owner: petmart-team
   system: petmart
