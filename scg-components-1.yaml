@@ -28,7 +28,6 @@ metadata:
 spec:
   type: openapi
   isCuratedApi: true
-  apiProvidedBy: petmart
   lifecycle: production
   owner: petmart-team
   system: petmart
