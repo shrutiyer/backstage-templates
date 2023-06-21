@@ -8,12 +8,10 @@ spec:
   owner: petmart-team
 ---
 apiVersion: backstage.io/v1alpha1
-kind: Component
+kind: Resource
 metadata:
   name: petmart-gateway
   description: My petmart gateway
-  annotations:
-    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=petmart'
 spec:
   type: service
   lifecycle: experimental
