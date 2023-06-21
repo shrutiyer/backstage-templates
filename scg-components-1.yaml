@@ -19,7 +19,8 @@ spec:
   lifecycle: experimental
   owner: petmart-team
   system: petmart
-  providesAPIs: petmart-api
+  providesAPIs: 
+    - petmart-api
 ---
 apiVersion: backstage.io/v1alpha1
 kind: API
