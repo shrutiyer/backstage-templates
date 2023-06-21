@@ -28,6 +28,7 @@ spec:
   type: service
   owner: petmart-team
   system: petmart
+  lifecycle: production
   providesApis: 
     - petmart-api
 ---
