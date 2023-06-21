@@ -20,6 +20,18 @@ spec:
     - petmart-api
 ---
 apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: petmart-gateway
+  description: My petmart gateway
+spec:
+  type: service
+  owner: petmart-team
+  system: petmart
+  providesApis: 
+    - petmart-api
+---
+apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
   name: petmart-api
