@@ -38,7 +38,8 @@ spec:
   system: petmart
   lifecycle: production
   providesApis: [petmart-api]
-  dependsOn: [API:cat-api, API:dog-api, resource:petmart-gateway]
+  consumesApis: [cat-api, dog-api]
+  dependsOn: [resource:petmart-gateway]
 ---
 apiVersion: backstage.io/v1alpha1
 kind: API
