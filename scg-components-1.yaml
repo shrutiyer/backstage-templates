@@ -228,3 +228,29 @@ spec:
           - petstore_auth:
             - write:pets
             - read:pets
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: cat-service
+  description: My cat API
+spec:
+  type: service
+  owner: petmart-team
+  system: petmart
+  lifecycle: production
+  providesApis: [cat-api]
+  subcomponentOf: petmart-curated
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: dog-service
+  description: My dog API
+spec:
+  type: service
+  owner: petmart-team
+  system: petmart
+  lifecycle: production
+  providesApis: [dog-api]
+  subcomponentOf: petmart-curated
