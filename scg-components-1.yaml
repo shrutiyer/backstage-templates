@@ -18,20 +18,12 @@ spec:
   members: [jdoe]
 ---
 apiVersion: backstage.io/v1alpha1
-kind: Resource
-metadata:
-  name: petmart-gateway
-  description: My petmart gateway
-spec:
-  type: service
-  owner: petmart-team
-  system: petmart
----
-apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: petmart-curated
   description: My petmart API
+  annotations:
+    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=petmart-curated'
 spec:
   type: service
   owner: petmart-team
@@ -49,7 +41,7 @@ metadata:
 spec:
   type: openapi
   isCuratedApi: true
-  dependsOn: [resource:petmart-gateway, API:cat-api, API:dog-api]
+  dependsOn: [API:cat-api, API:dog-api]
   lifecycle: production
   owner: petmart-team
   system: petmart
@@ -241,7 +233,6 @@ spec:
   system: petmart
   lifecycle: production
   providesApis: [cat-api]
-  subcomponentOf: petmart-curated
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component
@@ -254,4 +245,3 @@ spec:
   system: petmart
   lifecycle: production
   providesApis: [dog-api]
-  subcomponentOf: petmart-curated
