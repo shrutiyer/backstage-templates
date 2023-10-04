@@ -20,8 +20,8 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: petmart-curated
-  description: My petmart API
+  name: petmart-scg
+  description: My petmart Spring Cloud Gateway
   annotations:
     'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=petmart-curated'
 spec:
@@ -31,7 +31,6 @@ spec:
   lifecycle: production
   providesApis: [petmart-api]
   consumesApis: [cat-api, dog-api]
-  dependsOn: [resource:petmart-gateway]
 ---
 apiVersion: backstage.io/v1alpha1
 kind: API
