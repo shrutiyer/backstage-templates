@@ -21,6 +21,7 @@ apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
   name: cat-api
+  namespace: cat
   description: Retrieve petmart's cat details
 spec:
   type: openapi
@@ -82,6 +83,7 @@ apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
   name: dog-api
+  namespace: dog
   description: Retrieve petmart's dog details
 spec:
   type: openapi
@@ -149,7 +151,7 @@ spec:
   owner: petmart-team
   system: petmart
   lifecycle: production
-  providesApi: cat-api
+  providesApi: cat/cat-api
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component
@@ -161,4 +163,4 @@ spec:
   owner: petmart-team
   system: petmart
   lifecycle: production
-  providesApi: dog-api
+  providesApi: dog/dog-api
