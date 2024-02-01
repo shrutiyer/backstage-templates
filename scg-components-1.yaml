@@ -101,7 +101,6 @@ spec:
   type: openapi
   lifecycle: production
   owner: petmart-team
-  apiProvidedBy: component:dog-service
   system: petmart
   definition: |
     openapi: "3.0.0"
@@ -164,7 +163,6 @@ spec:
   lifecycle: production
   owner: petmart-team
   system: petmart
-  apiProvidedBy: component:cat-service
   definition: |
     openapi: "3.0.0"
     info:
