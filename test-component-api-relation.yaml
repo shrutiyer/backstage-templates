@@ -1,30 +1,29 @@
 ---
-apiVersion: backstage.io/v1alpha1
-kind: Component
+apiVersion: "backstage.io/v1alpha1"
+kind: "Component"
 metadata:
-  name: cat-component
-  description: |
-    [The Petstore](http://petstore.example.com) is an example API used to show features of the OpenAPI spec.
-    - First item
-    - Second item
-  links:
-    - url: https://github.com/swagger-api/swagger-petstore
-      title: GitHub Repo
-      icon: github
+  name: componentA
+  description: a component
+  tags:
+  - springboot
 spec:
-  type: service
-  lifecycle: experimental
-  owner: team-c
+  owner: groupA
+  lifecycle: "production"
+  system: systemA
+  dependsOn: []
+  consumesApis: []
+  type: "service"
 ---
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: meow-api
-  description: The Meow web API
+  name: componentA-api
+  description: the API
 spec:
+  system: systemA
   type: openapi
   lifecycle: production
-  owner: team-a
-  # apiProvidedBy: component:default/cat-component
-  definition:
-    $text: https://github.com/APIs-guru/openapi-directory/blob/dab6854d4d599aafb0eb36e6c7ae1fe0c37509b7/APIs/spotify.com/2021.4.2/openapi.yaml
+  owner: groupA
+  apiProvidedBy: component:componentA # this does not work
+  definition: |
+    some thing here
