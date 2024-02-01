@@ -33,68 +33,6 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: petmart-api
-  description: Retrieve petmart details
-spec:
-  type: openapi
-  isCuratedApi: true
-  lifecycle: production
-  owner: petmart-team
-  system: petmart
-  definition: |
-    openapi: "3.0.0"
-    info:
-      version: 1.0.0
-      title: Petmart API
-      license:
-        name: MIT
-    servers:
-      - url: http://artist.spotify.net/v1
-    paths:
-      /pet:
-        put:
-          tags:
-          - pet
-          summary: Update an existing pet
-          description: Update an existing pet by Id
-          operationId: updatePet
-          requestBody:
-            description: Update an existent pet in the store
-            content:
-              application/json:
-                schema:
-                  $ref: '#/components/schemas/Pet'
-              application/xml:
-                schema:
-                  $ref: '#/components/schemas/Pet'
-              application/x-www-form-urlencoded:
-                schema:
-                  $ref: '#/components/schemas/Pet'
-            required: true
-          responses:
-            "200":
-              description: Successful operation
-              content:
-                application/xml:
-                  schema:
-                    $ref: '#/components/schemas/Pet'
-                application/json:
-                  schema:
-                    $ref: '#/components/schemas/Pet'
-            "400":
-              description: Invalid ID supplied
-            "404":
-              description: Pet not found
-            "405":
-              description: Validation exception
-          security:
-          - petstore_auth:
-            - write:pets
-            - read:pets
----
-apiVersion: backstage.io/v1alpha1
-kind: API
-metadata:
   name: cat-api
   description: Retrieve petmart's cat details
 spec:
