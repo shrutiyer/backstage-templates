@@ -28,6 +28,6 @@ spec:
   type: openapi
   lifecycle: production
   owner: team-a
-  apiProvidedBy: component:default/cat-component
+  # apiProvidedBy: component:default/cat-component
   definition:
     $text: https://github.com/APIs-guru/openapi-directory/blob/dab6854d4d599aafb0eb36e6c7ae1fe0c37509b7/APIs/spotify.com/2021.4.2/openapi.yaml
