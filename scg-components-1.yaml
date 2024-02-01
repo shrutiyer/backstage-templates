@@ -18,19 +18,6 @@ spec:
   members: [jdoe]
 ---
 apiVersion: backstage.io/v1alpha1
-kind: Component
-metadata:
-  name: petmart-scg
-  description: My petmart Spring Cloud Gateway
-  annotations:
-    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=petmart-curated'
-spec:
-  type: service
-  owner: petmart-team
-  system: petmart
-  lifecycle: production
----
-apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
   name: cat-api
@@ -162,6 +149,7 @@ spec:
   owner: petmart-team
   system: petmart
   lifecycle: production
+  providesApi: cat-api
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component
@@ -173,3 +161,4 @@ spec:
   owner: petmart-team
   system: petmart
   lifecycle: production
+  providesApi: dog-api
