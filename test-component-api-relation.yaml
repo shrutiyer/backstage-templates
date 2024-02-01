@@ -21,9 +21,6 @@ kind: API
 metadata:
   name: meow-api
   description: The Meow web API
-  annotations:
-    # The annotation is deprecated, we use placeholders (see below) instead, remove it later.
-    backstage.io/definition-at-location: 'url:https://raw.githubusercontent.com/APIs-guru/openapi-directory/master/APIs/spotify.com/v1/swagger.yaml'
 spec:
   type: openapi
   lifecycle: production
