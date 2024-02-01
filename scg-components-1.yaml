@@ -29,8 +29,6 @@ spec:
   owner: petmart-team
   system: petmart
   lifecycle: production
-  providesApis: [petmart-api]
-  consumesApis: [cat-api, dog-api]
 ---
 apiVersion: backstage.io/v1alpha1
 kind: API
@@ -40,7 +38,6 @@ metadata:
 spec:
   type: openapi
   isCuratedApi: true
-  dependsOn: [API:cat-api, API:dog-api]
   lifecycle: production
   owner: petmart-team
   system: petmart
@@ -102,8 +99,6 @@ metadata:
   description: Retrieve petmart's cat details
 spec:
   type: openapi
-  isCuratedApi: false
-  providesApis: [petmart-api]
   lifecycle: production
   owner: petmart-team
   system: petmart
@@ -165,11 +160,10 @@ metadata:
   description: Retrieve petmart's dog details
 spec:
   type: openapi
-  isCuratedApi: false
-  providesApis: [petmart-api]
   lifecycle: production
   owner: petmart-team
   system: petmart
+  apiProvidedBy: component:dog-service
   definition: |
     openapi: "3.0.0"
     info:
@@ -231,7 +225,6 @@ spec:
   owner: petmart-team
   system: petmart
   lifecycle: production
-  providesApis: [cat-api]
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component
@@ -243,4 +236,3 @@ spec:
   owner: petmart-team
   system: petmart
   lifecycle: production
-  providesApis: [dog-api]
