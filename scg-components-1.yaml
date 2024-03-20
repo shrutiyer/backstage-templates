@@ -28,6 +28,7 @@ spec:
   lifecycle: production
   owner: petmart-team
   system: petmart
+  apiProvidedBy: cat-service
   definition: |
     openapi: "3.0.0"
     info:
@@ -90,6 +91,7 @@ spec:
   lifecycle: production
   owner: petmart-team
   system: petmart
+  apiProvidedBy: dog-service
   definition: |
     openapi: "3.0.0"
     info:
@@ -145,22 +147,22 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: cat-service
+  namespace: cat
   description: My cat API
 spec:
   type: service
   owner: petmart-team
   system: petmart
   lifecycle: production
-  providesApi: cat/cat-api
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: dog-service
+  namespace: dog
   description: My dog API
 spec:
   type: service
   owner: petmart-team
   system: petmart
   lifecycle: production
-  providesApi: dog/dog-api
